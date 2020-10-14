@@ -1,11 +1,18 @@
 ## Templating coding test :
-Implement a templating function "format(str: string, obj: Record<string, any>)"
+Implement a templating function 
+```typescript
+function format(str: string, obj: Record<string, any>){}
+```
 ​
 ### Expected output
 ```javascript
-format('Hello {{name}} :)', {name: 'Nicolas'}); // should return 'Hello Nicolas :)'
-format('Hello {{name}} :)', {}); // should return 'Hello {{name}} :)'
-format('Hello {{name}} :)'); // should return 'Hello {{name}} :)'
+format('Hello {{name}}', {name: 'Nicolas'}); // should return 'Hello Nicolas'
+
+format('{{greetings}} {{nameA}} and {{nameB}}', {greetings: 'Hola', nameA: 'Nicolas', nameB: 'Ulric'}); // should return 'Hola Nicolas and Ulric`
+
+format('Hello {{name}}', {}); // should return 'Hello {{name}}'
+
+format('Hello {{name}}'); // should return 'Hello {{name}}'
 ```
 ​
 ### Bonus :
